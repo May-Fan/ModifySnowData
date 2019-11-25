@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.skio.crms">
+    <select id="countCarLease" resultType="Integer">
+      SELECT count(*) FROM snow.car_leases
+        WHERE remark LIKE '%历史数据%';
+    </select>
+
+    <!--parameterType配置入参类型的路径-->
+    <insert id="addUser" parameterType="cn.skio.crms.bean.User">
+      INSERT INTO galaxy.user(id,username,password,email,create_time)
+        VALUES (#{id},#{username},#{password},#{email},#{create_time});
+    </insert>
+    <!--查找是否存在该合约-->
+    <select id="orderIsExist" parameterType="cn.skio.crms.bean.RecycleTime" resultType="Integer">
+        SELECT COUNT(*) FROM snow.car_leases
+          WHERE lease_number=#{leaseNumber} AND recycle_time IS NOT NULL;
+    </select>
+    <!--获取car_leases中remark中的备注，并取出-->
+    <select id="getCarLeaseRemark" parameterType="cn.skio.crms.bean.RecycleTime" resultType="String">
+        SELECT remark FROM snow.car_leases
+          WHERE lease_number=#{leaseNumber};
+    </select>
+    <!--修改car_leases中的退车时间及备注-->
+    <update id="modifyCarLease" parameterType="cn.skio.crms.bean.RecycleTime">
+      UPDATE snow.car_leases SET recycle_time=#{recycleTimeAfter},remark=#{remark}
+        WHERE lease_number=#{leaseNumber};
+    </update>
+    <!--根据传递进来的合约编号，返回退车表中的退车时间-->
+    <select id="getRetreatRecycleTime" parameterType="cn.skio.crms.bean.RecycleTime" resultType="String">
+        SELECT recycle_time FROM snow.car_retreat_orders
+          WHERE car_lease_id IN
+          (SELECT id FROM snow.car_leases WHERE lease_number=#{leaseNumber});
+    </select>
+    <!--根据传递进来的合约编号，返回car_retreat_orders中的原生备注-->
+    <select id="getRetreatRemark" parameterType="cn.skio.crms.bean.RecycleTime" resultType="String">
+        SELECT remark FROM snow.car_retreat_orders
+          WHERE car_lease_id  IN
+          (SELECT id FROM snow.car_leases WHERE lease_number=#{leaseNumber});
+    </select>
+    <!--修改退车表car_retreat_orders中的退车时间及备注-->
+    <update id="modifyRetreat" parameterType="cn.skio.crms.bean.RecycleTime">
+        UPDATE snow.car_retreat_orders SET recycle_time=#{recycleTimeAfter},remark=#{remark}
+          WHERE car_lease_id =
+          (SELECT id FROM snow.car_leases WHERE lease_number=#{leaseNumber});
+    </update>
+    <!--修改退款表return_cash_pledge_orders中的退车时间（该表无备注）-->
+    <update id="modifyReturn" parameterType="cn.skio.crms.bean.RecycleTime">
+        UPDATE snow.return_cash_pledge_orders SET recycle_time=#{recycleTimeAfter}
+          WHERE car_lease_id =
+          (SELECT id FROM snow.car_leases WHERE lease_number=#{leaseNumber});
+    </update>
+</mapper>
