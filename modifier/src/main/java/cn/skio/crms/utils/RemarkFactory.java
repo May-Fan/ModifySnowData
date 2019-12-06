@@ -1,19 +1,16 @@
 package cn.skio.crms.utils;
-
 import cn.skio.crms.bean.RecycleTime;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 /**
  * @program: ModifySnowData
- * @description:
+ * @description: 生成备注
  * @author: May
  * @create: 2019-11-07 13:11
  */
 public class RemarkFactory {
 
-  public static void updateRemark(String remark, RecycleTime recycleTime) {
+  public RecycleTime updateRemark(String remark, RecycleTime recycleTime) {
     String date = new SimpleDateFormat("yyyy/MM/dd").format(new Date());
     String recycleTimeBefore = recycleTime.getRecycleTimeBefore();
     String recycleTimeAfter = recycleTime.getRecycleTimeAfter();
@@ -28,7 +25,6 @@ public class RemarkFactory {
             recycleTimeBefore + "修改为" +
             recycleTimeAfter;
     recycleTime.setRemark(remark);
-
+    return recycleTime;
   }
-
 }

@@ -4,11 +4,6 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="cn.skio.crms">
-    <select id="countCarLease" resultType="Integer">
-      SELECT count(*) FROM snow.car_leases
-        WHERE remark LIKE '%历史数据%';
-    </select>
-
     <!--parameterType配置入参类型的路径-->
     <insert id="addUser" parameterType="cn.skio.crms.bean.User">
       INSERT INTO galaxy.user(id,username,password,email,create_time)
