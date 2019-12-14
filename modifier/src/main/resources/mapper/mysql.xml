@@ -48,4 +48,30 @@
           WHERE car_lease_id =
           (SELECT id FROM snow.car_leases WHERE lease_number=#{leaseNumber});
     </update>
+    <!--查找是否存在该合约-->
+    <select id="orderIsExist1" parameterType="String" resultType="Integer">
+        SELECT COUNT(*) FROM snow.car_leases
+          WHERE lease_number =#{str} AND recycle_time IS NOT NULL;
+    </select>
+    <!--根据合约编号查找车牌号-->
+    <select id="getCarNo" parameterType="String" resultType="String">
+        SELECT snow.car_register_infos.car_no FROM snow.car_leases
+          JOIN snow.car_register_infos ON  snow.car_leases.car_register_info_id = snow.car_register_infos.id
+        WHERE lease_number=#{str};
+    </select>
+    <!--根据合约编号查找司机姓名-->
+    <select id="getDriverName" parameterType="String" resultType="String">
+      SELECT snow.drivers.name FROM snow.car_leases
+        JOIN snow.drivers ON  snow.car_leases.driver_id = snow.drivers.id
+      WHERE lease_number=#{str};
+    </select>
+    <!--根据合约编号获取备注-->
+    <select id="getCarLeaseRemark1" parameterType="String" resultType="String">
+        SELECT remark FROM snow.car_leases
+          WHERE lease_number=#{leaseNumber};
+    </select>
+    <update id="updateCarLeaseReTime" parameterType="Map">
+      UPDATE snow.car_leases SET recycle_time=#{recycleTime},remark=#{remark}
+          WHERE lease_number = #{leaseNumber};
+    </update>
 </mapper>

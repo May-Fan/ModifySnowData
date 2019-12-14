@@ -10,12 +10,13 @@ import java.util.Date;
  */
 public class RemarkFactory {
 
+  String date = new SimpleDateFormat("yyyy/MM/dd").format(new Date());
+
   public RecycleTime updateRemark(String remark, RecycleTime recycleTime) {
-    String date = new SimpleDateFormat("yyyy/MM/dd").format(new Date());
     String recycleTimeBefore = recycleTime.getRecycleTimeBefore();
     String recycleTimeAfter = recycleTime.getRecycleTimeAfter();
 
-    if(remark.equals(null)) {
+    if(remark==null) {
       remark = "";
     }else {
       remark = remark + "；";
@@ -26,5 +27,22 @@ public class RemarkFactory {
             recycleTimeAfter;
     recycleTime.setRemark(remark);
     return recycleTime;
+  }
+  /**
+   * 在数据库获取到的remark基础上，加上日期及修改备注
+   * @param remark 数据库获取到的原remark
+   * @return 修改后的新remark
+   */
+  public String updateCarLeaseRemark(String remark,String beforeRecycleTime,String afterRecycleTime) {
+    if(remark.equals("")) {
+      remark = "";
+    }else {
+      remark = remark + ";";
+    }
+    remark = remark +
+            date + "业务要求将退车时间从" +
+            beforeRecycleTime + "修改为" +
+            afterRecycleTime;
+    return remark;
   }
 }
