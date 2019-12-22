@@ -1,3 +1,4 @@
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -9,8 +10,8 @@ import javax.annotation.PreDestroy;
 @EnableScheduling
 @SpringBootApplication
 @ComponentScan("cn.skio.crms")
+@MapperScan("cn.skio.crms.dao.persistence")
 public class ModifierApplication {
-
 
   private static ConfigurableApplicationContext context;
 
@@ -21,7 +22,6 @@ public class ModifierApplication {
 
   @PreDestroy
   public void close() {
-    ModifierApplication.context.close();}
-
-
+    ModifierApplication.context.close();
+  }
 }
