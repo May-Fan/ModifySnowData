@@ -2,10 +2,11 @@ server:
   port: 8080
 
 #配置日志文件输出路径、指定文件名
+#path和name不能同时配置，同时配置时，以文件为准
 logging:
   file:
-    path: logs
-    name: logs.log
+    path: ./logs
+    #    name: logback.log
 
 spring:
   application:

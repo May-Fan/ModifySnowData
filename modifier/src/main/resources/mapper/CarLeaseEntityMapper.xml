@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.skio.crms.dao.persistence.CarLeaseEntityMapper">
+    <!--parameterType入参类型的路径，resultType配置出参类型-->
+
+    <!--对对应合约编号及退车时间不为空的合约计数-->
+    <select id="orderIsExist1" parameterType="String" resultType="Integer">
+        SELECT COUNT(*) FROM snow.car_leases
+          WHERE lease_number =#{leaseNumber} AND recycle_time IS NOT NULL;
+    </select>
+    <!--对对应合约编号不为空的进行计数-->
+    <select id="orderIsExist2" parameterType="String" resultType="Integer">
+        SELECT COUNT(*) FROM snow.car_leases
+          WHERE lease_number =#{leaseNumber};
+    </select>
+    <!--根据合约编号查找滴滴订单号-->
+    <select id="getDiDiOrderNumber" parameterType="String" resultType="String">
+        SELECT didi_order_number FROM snow.car_leases
+          WHERE lease_number=#{leaseNumber};
+    </select>
+    <!--根据合约编号查找车牌号-->
+    <select id="getCarNo" parameterType="String" resultType="String">
+        SELECT snow.car_register_infos.car_no FROM snow.car_leases
+          JOIN snow.car_register_infos ON  snow.car_leases.car_register_info_id = snow.car_register_infos.id
+        WHERE lease_number=#{leaseNumber};
+    </select>
+    <!--根据合约编号查找司机姓名-->
+    <select id="getDriverName" parameterType="String" resultType="String">
+      SELECT snow.drivers.name FROM snow.car_leases
+        JOIN snow.drivers ON  snow.car_leases.driver_id = snow.drivers.id
+      WHERE lease_number=#{leaseNumber};
+    </select>
+    <!--根据合约编号查找备注-->
+    <select id="getCarLeaseRemark1" parameterType="String" resultType="String">
+        SELECT remark FROM snow.car_leases
+          WHERE lease_number=#{leaseNumber};
+    </select>
+    <!--根据合约编号查找备注-->
+    <select id="getCarLeaseRemark2" parameterType="String" resultType="String">
+        SELECT remark FROM snow.car_leases
+          WHERE lease_number=#{leaseNumber};
+    </select>
+    <!--根据合约编号更新car_leases退车时间、备注-->
+    <update id="updateCarLeaseReTime" parameterType="Map">
+      UPDATE snow.car_leases SET recycle_time=#{recycleTime},remark=#{carLeaseRecycleRemark}
+          WHERE lease_number = #{leaseNumber};
+    </update>
+    <!--根据合约编号更新car_leases租赁起始、备注-->
+    <update id="updateCarLeaseStart" parameterType="Map">
+      UPDATE snow.car_leases SET lease_start=#{leaseStart},remark=#{carLeaseStartRemark}
+          WHERE lease_number = #{leaseNumber};
+    </update>
+    <!--根据合约编号更新car_leases租赁结束、备注-->
+    <update id="updateCarLeaseEnd" parameterType="Map">
+      UPDATE snow.car_leases SET lease_end=#{leaseEnd},remark=#{carLeaseEndRemark}
+          WHERE lease_number = #{leaseNumber};
+    </update>
+    <!--根据合约编号更新car_leases滴滴订单号、备注-->
+    <update id="updateDiDiOrderNum" parameterType="Map">
+      UPDATE snow.car_leases SET didi_order_number=#{didiOrderNum},remark=#{remark}
+          WHERE lease_number = #{leaseNumber};
+    </update>
+</mapper>

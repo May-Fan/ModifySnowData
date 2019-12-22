@@ -1,15 +1,15 @@
 package cn.skio.crms.service;
 
+import cn.skio.crms.dao.persistence.CarLeaseEntityMapper;
+import cn.skio.crms.dao.persistence.CarRetreatEntityMapper;
+import cn.skio.crms.dao.persistence.ReturnCashEntityMapper;
+import cn.skio.crms.utils.ParseExcelUtil;
 import cn.skio.crms.utils.RemarkFactory;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.InputStream;
-import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,145 +25,144 @@ import java.util.Map;
 @Service
 public class ImportService {
   @Autowired
-  private SqlSessionTemplate template_1;
+  private CarLeaseEntityMapper carLeaseEntityMapper;
+
+  @Autowired
+  private CarRetreatEntityMapper carRetreatEntityMapper;
+
+  @Autowired
+  private ReturnCashEntityMapper returnCashEntityMapper;
+
   /**
-   * 解析excel文件
+   * 判断表头是否正确且对表中数据正确性校验，去除标题行后的新集合
    * @param inputStream 文件流，可以从中读取数据
-   * @param fileName 文件名称
-   * @return
+   * @param fileName    文件名称
+   * @return 去除标题行且筛选后的有效数据集合
    */
-  public List getExcelData(InputStream inputStream,String fileName) throws Exception{
+  public List getCarLeaseData(InputStream inputStream, String fileName) throws Exception {
     List list = new ArrayList<>();
-    //调用同类下的方法，判断excel版本并返回
-    Workbook work = this.getWorkbook(inputStream,fileName);
-    if(work == null) {
-      throw new Exception("excel内容不能为空！");
-    }
-    Sheet sheet = null;
-    Row row = null;
-    Cell cell = null;
-    String str = null;
-    Double dbl = null;
-    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-    Date date = null;
-    Integer count = null;
-    String driverName = null;
-    String carNo = null;
-
-    for(int i=0;i<work.getNumberOfSheets();i++) {
-      sheet = work.getSheetAt(i);
-      if(sheet == null) {
-        continue;
-      }
-      for(int j=sheet.getFirstRowNum();j<sheet.getLastRowNum()+1;j++) {
-        row = sheet.getRow(j);
-        if(row == null) {
-          continue;
-        }
-        List<Object> li = new ArrayList<>();
-
-        if(j==sheet.getFirstRowNum()) {
-          int rowLen = row.getLastCellNum();
-          if(rowLen!=5) {
-            throw new Exception("表头列数不正确！");
-          }
-          for(int x=row.getFirstCellNum();x<row.getLastCellNum();x++) {
-            cell = row.getCell(x);
-            li.add(cell.getStringCellValue());
-          }
-          if(!li.get(0).equals("合约编号")) {
-            throw new Exception("表头字段不正确！");
-          }else if(!li.get(1).equals("车牌")) {
-            throw new Exception("表头字段不正确！");
-          }else if(!li.get(2).equals("司机姓名")) {
-            throw new Exception("表头字段不正确！");
-          }else if(!li.get(3).equals("错误退车日期")) {
-            throw new Exception("表头字段不正确！");
-          }else if(!li.get(4).equals("正确退车日期")) {
-            throw new Exception("表头字段不正确！");
-          }
-        }
-        else {
-          for(int y=row.getFirstCellNum();y<row.getLastCellNum();y++) {
-            cell = row.getCell(y);
-            if((cell.getCellType() == CellType.STRING)||(cell.getCellType() ==CellType.BLANK)) {
-              str = cell.getStringCellValue();
-              li.add(str);
-            }
-            else if(cell.getCellType()== CellType.NUMERIC) {
-              str = sdf.format(cell.getDateCellValue());
-//             li.add(sdf.parse(str));
-              li.add(str);
-            }
-        }
-          count = template_1.selectOne("orderIsExist1",li.get(0));
-          if(count.equals(0)) {
-            throw new Exception("合约"+str+"不存在或未退车！");
-          }
-          carNo = template_1.selectOne("getCarNo",li.get(0));
-          driverName = template_1.selectOne("getDriverName",li.get(0));
-          if((!li.get(1).equals(carNo)) ||(!li.get(2).equals(driverName))) {
-            throw new Exception("合约编号与司机、车牌不一致！");
-          }
-          list.add(li);
+    List<Object> li;
+    Integer count;
+    String driverName;
+    String carNo;
+    //1.调用工具类下的方法，判断excel版本并返回非空对象
+    ParseExcelUtil parseExcelUtil = new ParseExcelUtil();
+    List excelList = parseExcelUtil.getExcel(inputStream, fileName,9);
+    //2.判断表头字段是否符合模板
+    for(Object obj:excelList) {
+      li = (List) obj;
+      if(li.size()==10) {
+        if (!li.get(0).equals("合约编号")) {
+//        logger.error("第"+i+"个sheet表头不正确！错误表头：合约编号");
+          throw new Exception("表头字段不正确！");
+        } else if (!li.get(1).equals("车牌")) {
+//        logger.error("第"+i+"个sheet表头不正确！错误表头：车牌");
+          throw new Exception("表头字段不正确！");
+        } else if (!li.get(2).equals("司机姓名")) {
+//        logger.error("第"+i+"个sheet表头不正确！错误表头：司机姓名");
+          throw new Exception("表头字段不正确！");
+        } else if (!li.get(3).equals("错误租赁起始时间")) {
+//        logger.error("第"+i+"个sheet表头不正确！错误表头：错误租赁起始时间");
+          throw new Exception("表头字段不正确！");
+        } else if (!li.get(4).equals("正确租赁起始时间")) {
+//        logger.error("第"+i+"个sheet表头不正确！错误表头：正确租赁起始时间");
+          throw new Exception("表头字段不正确！");
+        } else if (!li.get(5).equals("错误租赁结束时间")) {
+//        logger.error("第"+i+"个sheet表头不正确！错误表头：错误租赁结束时间");
+          throw new Exception("表头字段不正确！");
+        } else if (!li.get(6).equals("正确租赁结束时间")) {
+//        logger.error("第"+i+"个sheet表头不正确！错误表头：正确租赁结束时间");
+          throw new Exception("表头字段不正确！");
+        } else if (!li.get(7).equals("错误退车日期")) {
+//        logger.error("第"+i+"个sheet表头不正确！错误表头：错误退车日期");
+          throw new Exception("表头字段不正确！");
+        } else if (!li.get(8).equals("正确退车日期")) {
+//        logger.error("第"+i+"个sheet表头不正确！错误表头：正确退车日期");
+          throw new Exception("表头字段不正确！");
         }
       }
+      //3.符合表头字段后，判断合约存在且已退车
+      //  合约编号、姓名、车牌号与sql中内容做校验
+      else {
+        String leaseNumber = (String)li.get(0);
+        count = carLeaseEntityMapper.orderIsExist1(leaseNumber);
+        if (count.equals(0)) {
+//            logger.error("合约" + li.get(0)+ "不存在或未退车！");
+          throw new Exception("合约" + leaseNumber + "不存在或未退车！");
+        }
+        carNo = carLeaseEntityMapper.getCarNo(leaseNumber);
+        driverName = carLeaseEntityMapper.getDriverName(leaseNumber);
+        //校验excel中的司机车辆信息和sql表中是否一致
+        if ((!li.get(1).equals(carNo)) || (!li.get(2).equals(driverName))) {
+//            logger.error(li.get(0) +"合约编号与司机、车牌不一致！");
+          throw new Exception( leaseNumber +"合约编号与司机、车牌不一致！");
+        }
+        list.add(li);
+      }
     }
-    work.close();
     return list;
   }
 
   /**
-   * 根据后缀名判断excel版本，使用不同的工具类
-   * @param inStr 工作流
-   * @param fileName 文件名
-   * @return
-   */
-  public Workbook getWorkbook (InputStream inStr,String fileName) throws Exception {
-    String fileType = fileName.substring(fileName.lastIndexOf("."));
-    Workbook workbook = null;
-    if(fileType.equals(".xls") ) {
-      workbook = new HSSFWorkbook(inStr);
-    } else if (fileType.equals(".xlsx")) {
-      workbook = new XSSFWorkbook(inStr);
-    }
-    else {
-      throw new Exception("后缀名错误，请上传excel格式的文件！");
-    }
-    return workbook;
-  }
-
-  /**
-   * 根据解析excel表中的单元格是否为空，判断需要调用哪一个方法
-   * @param list
+   * 遍历解析后的List集合，根据不同列的数据分别修改数据库
+   * @param list 传入解析后的List集合
    */
   public void updateData(List list) {
-    List<Object> li = null;
-    for(Object obj : list) {
+    RemarkFactory remarkFactory = new RemarkFactory();
+    String leaseNumber;
+    String preRemark;
+    String leaseStartRemark;
+    String leaseEndRemark;
+    String recycleRemark;
+    String remark;
+    List<Object> li;
+    Map<String, String> param = new HashMap<>();
+
+    for (Object obj : list) {
       li = (List) obj;
-      //正确退车日期列不为空，修改退车日期
-      if(li.get(4)!=null) {
-        this.updateRecycleTime(li);
+      leaseNumber = (String) li.get(0);
+      param.put("leaseNumber", leaseNumber);
+      //1.正确退车时间列不为空，修改退车时间
+      if(li.get(8) != null) {
+        preRemark = carLeaseEntityMapper.getCarLeaseRemark1(leaseNumber);
+        recycleRemark = remarkFactory.getRecycleRemark((String) li.get(7), (String) li.get(8));
+        remark = remarkFactory.modifyRemark(preRemark, recycleRemark);
+        param.put("recycleTime", (String) li.get(8));
+        param.put("carLeaseRecycleRemark", remark);
+        carLeaseEntityMapper.updateCarLeaseReTime(param);
+
+        //判断car_retreat_order中的退车时间，如不为空则进行修改
+        if (carRetreatEntityMapper.selectRetreatRecycleTime(leaseNumber) != null) {
+          preRemark = carRetreatEntityMapper.selectRetreatRemark(leaseNumber);
+          remark = remarkFactory.modifyRemark(preRemark, recycleRemark);
+          param.put("retreatRemark", remark);
+          carRetreatEntityMapper.updateCarRetreatReTime(param);
+          returnCashEntityMapper.updateReturnCashReTime(param);
+//          logger.info("合约编号："+leaseNumber+"修改退车时间成功！");
+        }
+      }
+      //2.正确租赁起始列不为空，修改租赁起始时间
+      if (li.get(4) != null) {
+        preRemark = carLeaseEntityMapper.getCarLeaseRemark1(leaseNumber);
+        leaseStartRemark = remarkFactory.getLeaseStartRemark((String) li.get(3), (String) li.get(4));
+        remark = remarkFactory.modifyRemark(preRemark, leaseStartRemark);
+
+        param.put("leaseStart", (String) li.get(4));
+        param.put("carLeaseStartRemark", remark);
+        carLeaseEntityMapper.updateCarLeaseStart(param);
+//        logger.info("合约编号："+leaseNumber+"修改租赁起始成功！");
+      }
+      //3.正确租赁结束列不为空，修改租赁结束时间
+      if (li.get(6) != null) {
+        preRemark = carLeaseEntityMapper.getCarLeaseRemark1(leaseNumber);
+        leaseEndRemark = remarkFactory.getLeaseEndRemark((String) li.get(5), (String) li.get(6));
+        remark = remarkFactory.modifyRemark(preRemark, leaseEndRemark);
+
+        param.put("leaseEnd", (String) li.get(6));
+        param.put("carLeaseEndRemark", remark);
+        carLeaseEntityMapper.updateCarLeaseEnd(param);
+//        logger.info("合约编号："+leaseNumber+"修改租赁结束成功！");
       }
     }
-  }
-
-  /**
-   *根据获取到的List集合，修改退车时间
-   */
-  public void updateRecycleTime(List<Object> li) {
-    RemarkFactory remarkFactory = new RemarkFactory();
-    String preRemark = null;
-    String remark = null;
-      preRemark = template_1.selectOne("getCarLeaseRemark1",li.get(0));
-      if(preRemark == null) {
-        preRemark = "";
-      }
-      remark = remarkFactory.updateCarLeaseRemark(preRemark,(String) li.get(3),(String) li.get(4));
-      Map<String,Object> param = new HashMap<>();
-      param.put("leaseNumber",li.get(0));
-      param.put("recycleTime",li.get(4));
-      param.put("remark",remark);
-      template_1.update("updateCarLeaseReTime",param);
   }
 }

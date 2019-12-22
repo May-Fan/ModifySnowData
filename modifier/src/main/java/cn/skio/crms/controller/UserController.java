@@ -1,8 +1,6 @@
 package cn.skio.crms.controller;
 
-import cn.skio.crms.bean.Student;
 import cn.skio.crms.bean.User;
-import io.swagger.annotations.ApiOperation;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @create: 2019-10-29 17:10
  */
 @RestController
-public class StudentController {
+public class UserController {
   @Autowired
   private SqlSessionTemplate template;
 
@@ -26,7 +24,7 @@ public class StudentController {
    */
   @RequestMapping(value = "addUser", method = RequestMethod.POST)
   public String addUser(@RequestBody User user) {
-    template.insert("addUser",user);
+    template.insert("addUser", user);
     return "新增用户成功！";
   }
 
