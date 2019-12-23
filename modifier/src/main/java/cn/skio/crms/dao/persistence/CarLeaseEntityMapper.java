@@ -24,6 +24,8 @@ public interface CarLeaseEntityMapper {
 
   String getDiDiOrderNumber(String leaseNumber);
 
+  String getRecycleTime(String leaseNumber);
+
   String getCarLeaseRemark1(String leaseNumber);
 
   String getCarLeaseRemark2(String leaseNumber);

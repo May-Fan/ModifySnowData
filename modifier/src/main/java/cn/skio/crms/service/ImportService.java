@@ -97,6 +97,11 @@ public class ImportService {
 //            logger.error(li.get(0) +"合约编号与司机、车牌不一致！");
           throw new Exception( leaseNumber +"合约编号与司机、车牌不一致！");
         }
+        if(li.get(8)!=null) {
+          if(carLeaseEntityMapper.getRecycleTime(leaseNumber)==null) {
+            throw new Exception("合约" + leaseNumber + "未退车，无法修改退车时间！");
+          }
+        }
         list.add(li);
       }
     }

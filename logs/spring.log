@@ -1,53 +1,24 @@
-2019-12-22 03:57:53.013  WARN 69641 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4h21s850ms).
-2019-12-22 05:01:33.986  WARN 69641 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h3m40s990ms).
-2019-12-22 09:01:58.232  WARN 69641 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4h24s247ms).
-2019-12-22 13:02:23.291  WARN 69641 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4h25s59ms).
-2019-12-22 14:24:17.612  WARN 69641 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h21m54s321ms).
-2019-12-22 14:28:05.611  INFO 69641 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
-2019-12-22 14:28:05.620  INFO 69641 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-12-22 14:28:05.631  INFO 69641 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2019-12-22 14:28:05.697  INFO 69641 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2019-12-22 14:28:15.946  INFO 75242 --- [main] ModifierApplication                      : Starting ModifierApplication on xjtdeMacBook-Pro.local with PID 75242 (/Users/fanlilin/workspace/snow/ModifySnowData/modifier/target/classes started by fanlilin in /Users/fanlilin/workspace/snow/ModifySnowData)
-2019-12-22 14:28:15.953  INFO 75242 --- [main] ModifierApplication                      : No active profile set, falling back to default profiles: default
-2019-12-22 14:28:19.431  INFO 75242 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2019-12-22 14:28:19.446  INFO 75242 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-12-22 14:28:19.447  INFO 75242 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-22 14:28:19.640  INFO 75242 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-12-22 14:28:19.641  INFO 75242 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3559 ms
-2019-12-22 14:28:20.385  INFO 75242 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-22 14:28:20.614  INFO 75242 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2019-12-22 14:28:20.743  INFO 75242 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2019-12-22 14:28:20.751  INFO 75242 --- [main] ModifierApplication                      : Started ModifierApplication in 6.378 seconds (JVM running for 10.652)
-2019-12-22 14:28:25.231  INFO 75242 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-12-22 14:28:25.233  INFO 75242 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-12-22 14:28:25.255  INFO 75242 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 22 ms
-2019-12-22 14:28:44.473  INFO 75242 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-12-22 14:28:49.195  INFO 75242 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-12-22 14:29:46.657  INFO 75242 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
-2019-12-22 14:29:46.661  INFO 75242 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-12-22 14:29:46.666  INFO 75242 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2019-12-22 14:29:46.693  INFO 75242 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2019-12-22 14:29:52.976  INFO 75873 --- [main] ModifierApplication                      : Starting ModifierApplication on xjtdeMacBook-Pro.local with PID 75873 (/Users/fanlilin/workspace/snow/ModifySnowData/modifier/target/classes started by fanlilin in /Users/fanlilin/workspace/snow/ModifySnowData)
-2019-12-22 14:29:52.982  INFO 75873 --- [main] ModifierApplication                      : No active profile set, falling back to default profiles: default
-2019-12-22 14:29:54.987  INFO 75873 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2019-12-22 14:29:55.007  INFO 75873 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-12-22 14:29:55.007  INFO 75873 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-22 14:29:55.231  INFO 75873 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-12-22 14:29:55.232  INFO 75873 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2110 ms
-2019-12-22 14:29:55.972  INFO 75873 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-22 14:29:56.960  INFO 75873 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2019-12-22 14:29:57.281  INFO 75873 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2019-12-22 14:29:57.308  INFO 75873 --- [main] ModifierApplication                      : Started ModifierApplication in 5.094 seconds (JVM running for 7.505)
-2019-12-22 14:30:04.886  INFO 75873 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-12-22 14:30:04.889  INFO 75873 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-12-22 14:30:04.918  INFO 75873 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 29 ms
-2019-12-22 14:30:05.837  INFO 75873 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-12-22 14:30:06.506  INFO 75873 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-12-22 14:30:06.685 ERROR 75873 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.Exception: 201809030133合约编号与滴滴订单号不一致！] with root cause
+2019-12-23 09:33:13.539  INFO 22480 --- [main] ModifierApplication                      : Starting ModifierApplication on xjtdeMBP with PID 22480 (/Users/fanlilin/workspace/snow/ModifySnowData/modifier/target/classes started by fanlilin in /Users/fanlilin/workspace/snow/ModifySnowData)
+2019-12-23 09:33:13.548  INFO 22480 --- [main] ModifierApplication                      : No active profile set, falling back to default profiles: default
+2019-12-23 09:33:15.309  INFO 22480 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-12-23 09:33:15.325  INFO 22480 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-23 09:33:15.326  INFO 22480 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-23 09:33:15.554  INFO 22480 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-23 09:33:15.554  INFO 22480 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1801 ms
+2019-12-23 09:33:16.353  INFO 22480 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 09:33:16.801  INFO 22480 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2019-12-23 09:33:17.102  INFO 22480 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-12-23 09:33:17.114  INFO 22480 --- [main] ModifierApplication                      : Started ModifierApplication in 4.862 seconds (JVM running for 7.782)
+2019-12-23 09:33:28.765  INFO 22480 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-23 09:33:28.768  INFO 22480 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-12-23 09:33:28.791  INFO 22480 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 21 ms
+2019-12-23 09:33:30.417  INFO 22480 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-12-23 09:33:30.882  INFO 22480 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-12-23 09:33:31.009 ERROR 22480 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.Exception: 合约201912180102不存在或未退车！] with root cause
 
-java.lang.Exception: 201809030133合约编号与滴滴订单号不一致！
-	at cn.skio.crms.service.DidiOrderService.getDiDiOrderList(DidiOrderService.java:69) ~[classes/:na]
-	at cn.skio.crms.controller.DidiOrderControler.modifyDiDi(DidiOrderControler.java:36) ~[classes/:na]
+java.lang.Exception: 合约201912180102不存在或未退车！
+	at cn.skio.crms.service.ImportService.getCarLeaseData(ImportService.java:91) ~[classes/:na]
+	at cn.skio.crms.controller.ImportExcelController.importExcel(ImportExcelController.java:46) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
@@ -99,31 +70,31 @@ java.lang.Exception: 201809030133合约编号与滴滴订单号不一致！
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.27.jar:9.0.27]
 	at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
 
-2019-12-22 14:31:46.790  INFO 75873 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
-2019-12-22 14:31:46.792  INFO 75873 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-12-22 14:31:46.798  INFO 75873 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2019-12-22 14:31:46.851  INFO 75873 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2019-12-22 14:31:52.989  INFO 76714 --- [main] ModifierApplication                      : Starting ModifierApplication on xjtdeMacBook-Pro.local with PID 76714 (/Users/fanlilin/workspace/snow/ModifySnowData/modifier/target/classes started by fanlilin in /Users/fanlilin/workspace/snow/ModifySnowData)
-2019-12-22 14:31:52.994  INFO 76714 --- [main] ModifierApplication                      : No active profile set, falling back to default profiles: default
-2019-12-22 14:31:55.418  INFO 76714 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2019-12-22 14:31:55.434  INFO 76714 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-12-22 14:31:55.435  INFO 76714 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-22 14:31:55.600  INFO 76714 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-12-22 14:31:55.600  INFO 76714 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2441 ms
-2019-12-22 14:31:56.200  INFO 76714 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-22 14:31:56.446  INFO 76714 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2019-12-22 14:31:56.534  INFO 76714 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2019-12-22 14:31:56.540  INFO 76714 --- [main] ModifierApplication                      : Started ModifierApplication in 4.234 seconds (JVM running for 6.496)
-2019-12-22 14:32:01.301  INFO 76714 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-12-22 14:32:01.302  INFO 76714 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-12-22 14:32:01.338  INFO 76714 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 36 ms
-2019-12-22 14:32:02.084  INFO 76714 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-12-22 14:32:02.540  INFO 76714 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-12-22 14:32:02.702 ERROR 76714 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.Exception: 201809030190合约编号与滴滴订单号不一致！] with root cause
+2019-12-23 09:34:35.978  INFO 22480 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2019-12-23 09:34:35.980  INFO 22480 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 09:34:35.982  INFO 22480 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-12-23 09:34:35.994  INFO 22480 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-12-23 09:36:01.649  INFO 23993 --- [main] ModifierApplication                      : Starting ModifierApplication on xjtdeMBP with PID 23993 (/Users/fanlilin/workspace/snow/ModifySnowData/modifier/target/classes started by fanlilin in /Users/fanlilin/workspace/snow/ModifySnowData)
+2019-12-23 09:36:01.661  INFO 23993 --- [main] ModifierApplication                      : No active profile set, falling back to default profiles: default
+2019-12-23 09:36:03.729  INFO 23993 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-12-23 09:36:03.743  INFO 23993 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-23 09:36:03.744  INFO 23993 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-23 09:36:03.853  INFO 23993 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-23 09:36:03.853  INFO 23993 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2033 ms
+2019-12-23 09:36:04.544  INFO 23993 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 09:36:04.752  INFO 23993 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2019-12-23 09:36:04.852  INFO 23993 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-12-23 09:36:04.863  INFO 23993 --- [main] ModifierApplication                      : Started ModifierApplication in 4.822 seconds (JVM running for 6.64)
+2019-12-23 09:36:27.930  INFO 23993 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-23 09:36:27.932  INFO 23993 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-12-23 09:36:27.944  INFO 23993 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2019-12-23 09:36:29.897  INFO 23993 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-12-23 09:36:30.356  INFO 23993 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-12-23 09:36:30.489 ERROR 23993 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.Exception: 合约201912180102不存在或未退车！] with root cause
 
-java.lang.Exception: 201809030190合约编号与滴滴订单号不一致！
-	at cn.skio.crms.service.DidiOrderService.getDiDiOrderList(DidiOrderService.java:69) ~[classes/:na]
-	at cn.skio.crms.controller.DidiOrderControler.modifyDiDi(DidiOrderControler.java:36) ~[classes/:na]
+java.lang.Exception: 合约201912180102不存在或未退车！
+	at cn.skio.crms.service.ImportService.getCarLeaseData(ImportService.java:91) ~[classes/:na]
+	at cn.skio.crms.controller.ImportExcelController.importExcel(ImportExcelController.java:46) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
@@ -175,52 +146,31 @@ java.lang.Exception: 201809030190合约编号与滴滴订单号不一致！
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.27.jar:9.0.27]
 	at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
 
-2019-12-22 14:32:35.597  INFO 76714 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
-2019-12-22 14:32:35.602  INFO 76714 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-12-22 14:32:35.604  INFO 76714 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2019-12-22 14:32:35.643  INFO 76714 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2019-12-22 14:32:42.133  INFO 77072 --- [main] ModifierApplication                      : Starting ModifierApplication on xjtdeMacBook-Pro.local with PID 77072 (/Users/fanlilin/workspace/snow/ModifySnowData/modifier/target/classes started by fanlilin in /Users/fanlilin/workspace/snow/ModifySnowData)
-2019-12-22 14:32:42.137  INFO 77072 --- [main] ModifierApplication                      : No active profile set, falling back to default profiles: default
-2019-12-22 14:32:44.623  INFO 77072 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2019-12-22 14:32:44.640  INFO 77072 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-12-22 14:32:44.640  INFO 77072 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-22 14:32:44.856  INFO 77072 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-12-22 14:32:44.857  INFO 77072 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2565 ms
-2019-12-22 14:32:45.468  INFO 77072 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-22 14:32:45.646  INFO 77072 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2019-12-22 14:32:45.740  INFO 77072 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2019-12-22 14:32:45.747  INFO 77072 --- [main] ModifierApplication                      : Started ModifierApplication in 4.323 seconds (JVM running for 6.654)
-2019-12-22 14:33:10.255  INFO 77072 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-12-22 14:33:10.260  INFO 77072 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-12-22 14:33:10.284  INFO 77072 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 22 ms
-2019-12-22 14:33:11.008  INFO 77072 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-12-22 14:33:11.521  INFO 77072 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-12-22 14:35:47.344  WARN 77072 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m1s47ms).
-2019-12-22 14:35:47.565  INFO 77072 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
-2019-12-22 14:35:47.570  INFO 77072 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-12-22 14:35:47.574  INFO 77072 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2019-12-22 14:35:47.633  INFO 77072 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2019-12-22 14:35:57.300  INFO 78338 --- [main] ModifierApplication                      : Starting ModifierApplication on xjtdeMacBook-Pro.local with PID 78338 (/Users/fanlilin/workspace/snow/ModifySnowData/modifier/target/classes started by fanlilin in /Users/fanlilin/workspace/snow/ModifySnowData)
-2019-12-22 14:35:57.309  INFO 78338 --- [main] ModifierApplication                      : No active profile set, falling back to default profiles: default
-2019-12-22 14:35:59.437  INFO 78338 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2019-12-22 14:35:59.453  INFO 78338 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-12-22 14:35:59.454  INFO 78338 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-22 14:35:59.631  INFO 78338 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-12-22 14:35:59.631  INFO 78338 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2158 ms
-2019-12-22 14:36:00.348  INFO 78338 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-22 14:36:00.539  INFO 78338 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2019-12-22 14:36:00.647  INFO 78338 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2019-12-22 14:36:00.655  INFO 78338 --- [main] ModifierApplication                      : Started ModifierApplication in 4.29 seconds (JVM running for 6.627)
-2019-12-22 14:36:08.449  INFO 78338 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-12-22 14:36:08.451  INFO 78338 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-12-22 14:36:08.465  INFO 78338 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
-2019-12-22 14:36:09.894  INFO 78338 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-12-22 14:36:10.476  INFO 78338 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-12-22 14:36:10.644 ERROR 78338 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.Exception: 201809030133合约编号与滴滴订单号不一致！] with root cause
+2019-12-23 09:39:59.469  INFO 23993 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2019-12-23 09:39:59.471  INFO 23993 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 09:39:59.472  INFO 23993 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-12-23 09:39:59.486  INFO 23993 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-12-23 09:40:04.654  INFO 26152 --- [main] ModifierApplication                      : Starting ModifierApplication on xjtdeMBP with PID 26152 (/Users/fanlilin/workspace/snow/ModifySnowData/modifier/target/classes started by fanlilin in /Users/fanlilin/workspace/snow/ModifySnowData)
+2019-12-23 09:40:04.659  INFO 26152 --- [main] ModifierApplication                      : No active profile set, falling back to default profiles: default
+2019-12-23 09:40:06.153  INFO 26152 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-12-23 09:40:06.174  INFO 26152 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-23 09:40:06.175  INFO 26152 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-23 09:40:06.358  INFO 26152 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-23 09:40:06.359  INFO 26152 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1577 ms
+2019-12-23 09:40:07.756  INFO 26152 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 09:40:08.570  INFO 26152 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2019-12-23 09:40:08.741  INFO 26152 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-12-23 09:40:08.749  INFO 26152 --- [main] ModifierApplication                      : Started ModifierApplication in 4.658 seconds (JVM running for 6.395)
+2019-12-23 09:40:14.842  INFO 26152 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-23 09:40:14.845  INFO 26152 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-12-23 09:40:14.868  INFO 26152 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 22 ms
+2019-12-23 09:40:16.713  INFO 26152 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-12-23 09:40:17.279  INFO 26152 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-12-23 09:40:17.408 ERROR 26152 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.Exception: 合约201912180102不存在或未退车！] with root cause
 
-java.lang.Exception: 201809030133合约编号与滴滴订单号不一致！
-	at cn.skio.crms.service.DidiOrderService.getDiDiOrderList(DidiOrderService.java:69) ~[classes/:na]
-	at cn.skio.crms.controller.DidiOrderControler.modifyDiDi(DidiOrderControler.java:36) ~[classes/:na]
+java.lang.Exception: 合约201912180102不存在或未退车！
+	at cn.skio.crms.service.ImportService.getCarLeaseData(ImportService.java:91) ~[classes/:na]
+	at cn.skio.crms.controller.ImportExcelController.importExcel(ImportExcelController.java:46) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
@@ -272,47 +222,23 @@ java.lang.Exception: 201809030133合约编号与滴滴订单号不一致！
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.27.jar:9.0.27]
 	at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
 
-2019-12-22 14:37:29.043  INFO 78338 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
-2019-12-22 14:37:29.045  INFO 78338 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-12-22 14:37:29.050  INFO 78338 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2019-12-22 14:37:29.067  INFO 78338 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2019-12-22 14:37:35.103  INFO 79028 --- [main] ModifierApplication                      : Starting ModifierApplication on xjtdeMacBook-Pro.local with PID 79028 (/Users/fanlilin/workspace/snow/ModifySnowData/modifier/target/classes started by fanlilin in /Users/fanlilin/workspace/snow/ModifySnowData)
-2019-12-22 14:37:35.109  INFO 79028 --- [main] ModifierApplication                      : No active profile set, falling back to default profiles: default
-2019-12-22 14:37:37.443  INFO 79028 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2019-12-22 14:37:37.469  INFO 79028 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-12-22 14:37:37.470  INFO 79028 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-22 14:37:37.736  INFO 79028 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-12-22 14:37:37.737  INFO 79028 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2428 ms
-2019-12-22 14:37:39.336  INFO 79028 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-22 14:37:39.906  INFO 79028 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2019-12-22 14:37:40.051  INFO 79028 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2019-12-22 14:37:40.058  INFO 79028 --- [main] ModifierApplication                      : Started ModifierApplication in 5.795 seconds (JVM running for 8.139)
-2019-12-22 14:37:49.098  INFO 79028 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-12-22 14:37:49.099  INFO 79028 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-12-22 14:37:49.153  INFO 79028 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 52 ms
-2019-12-22 14:37:49.869  INFO 79028 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-12-22 14:37:50.454  INFO 79028 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-12-22 14:38:05.064  INFO 79028 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
-2019-12-22 14:38:05.074  INFO 79028 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-12-22 14:38:05.080  INFO 79028 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2019-12-22 14:38:05.155  INFO 79028 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2019-12-22 14:40:26.175  INFO 80211 --- [main] ModifierApplication                      : Starting ModifierApplication on xjtdeMacBook-Pro.local with PID 80211 (/Users/fanlilin/workspace/snow/ModifySnowData/modifier/target/classes started by fanlilin in /Users/fanlilin/workspace/snow/ModifySnowData)
-2019-12-22 14:40:26.183  INFO 80211 --- [main] ModifierApplication                      : No active profile set, falling back to default profiles: default
-2019-12-22 14:40:29.907  INFO 80211 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2019-12-22 14:40:29.942  INFO 80211 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-12-22 14:40:29.943  INFO 80211 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-22 14:40:30.525  INFO 80211 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-12-22 14:40:30.526  INFO 80211 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4221 ms
-2019-12-22 14:40:31.639  INFO 80211 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-22 14:40:32.040  INFO 80211 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2019-12-22 14:40:32.138  INFO 80211 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2019-12-22 14:40:32.145  INFO 80211 --- [main] ModifierApplication                      : Started ModifierApplication in 6.841 seconds (JVM running for 9.182)
-2019-12-22 14:40:41.340  INFO 80211 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-12-22 14:40:41.342  INFO 80211 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-12-22 14:40:41.380  INFO 80211 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 29 ms
-2019-12-22 14:40:42.445  INFO 80211 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-12-22 14:40:43.127  INFO 80211 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-12-22 14:40:50.750  INFO 80211 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
-2019-12-22 14:40:50.755  INFO 80211 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-12-22 14:40:50.758  INFO 80211 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2019-12-22 14:40:50.844  INFO 80211 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-12-23 09:51:35.798  INFO 26152 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2019-12-23 09:51:35.800  INFO 26152 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-23 09:51:35.803  INFO 26152 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-12-23 09:51:35.812  INFO 26152 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-12-23 09:51:49.111  INFO 32426 --- [main] ModifierApplication                      : Starting ModifierApplication on xjtdeMBP with PID 32426 (/Users/fanlilin/workspace/snow/ModifySnowData/modifier/target/classes started by fanlilin in /Users/fanlilin/workspace/snow/ModifySnowData)
+2019-12-23 09:51:49.115  INFO 32426 --- [main] ModifierApplication                      : No active profile set, falling back to default profiles: default
+2019-12-23 09:51:52.012  INFO 32426 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-12-23 09:51:52.033  INFO 32426 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-23 09:51:52.033  INFO 32426 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-23 09:51:52.256  INFO 32426 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-23 09:51:52.257  INFO 32426 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2974 ms
+2019-12-23 09:51:53.470  INFO 32426 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-23 09:51:53.755  INFO 32426 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2019-12-23 09:51:53.838  INFO 32426 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-12-23 09:51:53.844  INFO 32426 --- [main] ModifierApplication                      : Started ModifierApplication in 5.82 seconds (JVM running for 8.864)
+2019-12-23 09:51:57.393  INFO 32426 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-23 09:51:57.395  INFO 32426 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-12-23 09:51:57.416  INFO 32426 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 20 ms
+2019-12-23 09:51:59.207  INFO 32426 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-12-23 09:51:59.670  INFO 32426 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.

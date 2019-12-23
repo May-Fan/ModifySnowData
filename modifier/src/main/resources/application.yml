@@ -14,9 +14,9 @@ spring:
   #配置mysql数据库
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://rm-bp14xff0gr83484t9fo.mysql.rds.aliyuncs.com/snow
-    username: noah
-    password: noah_123456
+    url: jdbc:mysql://rm-bp15j93481vns5y190o.mysql.rds.aliyuncs.com/snow
+    username: snow
+    password: Snow17767113316
 
 mybatis:
   #配置启动mybatis时所需的java bean的路径，用于映射

@@ -9,7 +9,7 @@
     <!--对对应合约编号及退车时间不为空的合约计数-->
     <select id="orderIsExist1" parameterType="String" resultType="Integer">
         SELECT COUNT(*) FROM snow.car_leases
-          WHERE lease_number =#{leaseNumber} AND recycle_time IS NOT NULL;
+          WHERE lease_number =#{leaseNumber};
     </select>
     <!--对对应合约编号不为空的进行计数-->
     <select id="orderIsExist2" parameterType="String" resultType="Integer">
@@ -32,6 +32,11 @@
       SELECT snow.drivers.name FROM snow.car_leases
         JOIN snow.drivers ON  snow.car_leases.driver_id = snow.drivers.id
       WHERE lease_number=#{leaseNumber};
+    </select>
+    <!--根据合约编号查找退车时间-->
+    <select id="getRecycleTime" parameterType="String" resultType="String">
+      SELECT recycle_time FROM snow.car_leases
+          WHERE lease_number=#{leaseNumber};
     </select>
     <!--根据合约编号查找备注-->
     <select id="getCarLeaseRemark1" parameterType="String" resultType="String">
