@@ -5,12 +5,10 @@ import cn.skio.crms.dao.persistence.CarRetreatEntityMapper;
 import cn.skio.crms.dao.persistence.ReturnCashEntityMapper;
 import cn.skio.crms.utils.ParseExcelUtil;
 import cn.skio.crms.utils.RemarkFactory;
-import org.apache.poi.ss.usermodel.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.InputStream;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -81,14 +79,14 @@ public class ImportService {
           throw new Exception("表头字段不正确！");
         }
       }
-      //3.符合表头字段后，判断合约存在且已退车
+      //3.符合表头字段后，判断合约存在
       //  合约编号、姓名、车牌号与sql中内容做校验
       else {
         String leaseNumber = (String)li.get(0);
         count = carLeaseEntityMapper.orderIsExist1(leaseNumber);
         if (count.equals(0)) {
-//            logger.error("合约" + li.get(0)+ "不存在或未退车！");
-          throw new Exception("合约" + leaseNumber + "不存在或未退车！");
+//            logger.error("合约" + li.get(0)+ "不存在！");
+          throw new Exception("合约" + leaseNumber + "不存在！");
         }
         carNo = carLeaseEntityMapper.getCarNo(leaseNumber);
         driverName = carLeaseEntityMapper.getDriverName(leaseNumber);

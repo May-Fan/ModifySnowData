@@ -1,27 +1,3 @@
-server:
-  port: 8080
-
-#配置日志文件输出路径、指定文件名
-#path和name不能同时配置，同时配置时，以文件为准
-logging:
-  file:
-    path: ./logs
-    #    name: logback.log
-
 spring:
-  application:
-    name: TestDemo
-  #配置mysql数据库
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://rm-bp15j93481vns5y190o.mysql.rds.aliyuncs.com/snow
-    username: snow
-    password: Snow17767113316
-
-mybatis:
-  #配置启动mybatis时所需的java bean的路径，用于映射
-  type-aliases-package: cn.skio.crms.bean
-  #配置存放sql语句的路径
-  mapper-locations:
-    - mapper/*
-
+  profiles:
+    active: test

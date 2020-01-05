@@ -16,4 +16,5 @@ public class LeaseTime {
   private String leaseEndBefore;
   private String leaseEndAfter;
   private String remark;
+
 }
